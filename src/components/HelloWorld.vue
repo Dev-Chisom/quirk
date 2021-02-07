@@ -170,10 +170,13 @@ export default {
       background-color: #fafafa;
     }
     &__navbar {
-      padding: 2em;
+      padding: 1em;
     }
     &__content {
       margin: 0;
+    }
+    &__info {
+      padding: 1em;
     }
     &__navbar-left {
       display: flex;
