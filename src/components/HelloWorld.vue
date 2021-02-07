@@ -134,7 +134,7 @@ export default {
     font-size: 1.2em;
     line-height: 1.8;
     padding: 0.2em;
-    margin-bottom: 2.5em;
+    margin-bottom: 1.3em;
   }
   &__btn-con {
     display: flex;
@@ -144,12 +144,12 @@ export default {
   &__btn-big {
     border-radius: 0.4em;
     font-size: 0.9em;
-    padding: 1.5em 4.5em;
+    padding: 1em 4em;
     margin: 1em;
     cursor: pointer;
   }
   &__special {
-    margin: 2em 0 4em 17em;
+    margin: 0.7em 0 4em 14em;
   }
   &__image {
     width: 70%;
