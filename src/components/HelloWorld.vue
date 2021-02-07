@@ -169,6 +169,9 @@ export default {
       width: 100%;
       background-color: #fafafa;
     }
+    &__navbar {
+      padding: 2em;
+    }
     &__content {
       margin: 0;
     }
