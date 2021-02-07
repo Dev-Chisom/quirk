@@ -213,15 +213,11 @@ export default {
       text-align: center;
       padding: 2em;
     }
-  }
-}
-/* @media (min-width: 320px) and (max-width: 425px) {
-  .header {
     &__navbar-btn {
       display: flex;
       align-items: center;
       justify-content: center;
     }
   }
-} */
+}
 </style>
