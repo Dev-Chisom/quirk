@@ -10,7 +10,7 @@
           <li class="header__navbar-link">Pricing</li>
         </ul>
       </div>
-      <div class="header__mobile" v-if="navStyle">
+      <div class="header__mobile animate" v-if="navStyle">
         <div class="header__mobile-top">
           <h2 class="header__mobile-logo">Quirk</h2>
           <i class="fas fa-times" @click="closeNav"></i>
@@ -70,6 +70,12 @@ export default {
 .red {
   background-color: #eb346b;
   color: #fff;
+}
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transform-origin: right bottom;
+  animation-name: rotate;
 }
 .header {
   &__navbar {
@@ -163,6 +169,9 @@ export default {
       width: 100%;
       background-color: #fafafa;
     }
+    &__content {
+      margin: 0;
+    }
     &__navbar-left {
       display: flex;
       justify-content: space-between;
@@ -218,6 +227,17 @@ export default {
       align-items: center;
       justify-content: center;
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
   }
 }
 </style>
