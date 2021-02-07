@@ -1,114 +1,227 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
-  </div>
+  <header class="header">
+    <nav class="header__navbar">
+      <div class="header__navbar-left">
+        <h2 class="header__navbar-logo">Quirk</h2>
+
+        <ul class="header__navbar-links">
+          <li class="header__navbar-link">Course</li>
+          <li class="header__navbar-link">Download</li>
+          <li class="header__navbar-link">Pricing</li>
+        </ul>
+      </div>
+      <div class="header__mobile" v-if="navStyle">
+        <div class="header__mobile-top">
+          <h2 class="header__mobile-logo">Quirk</h2>
+          <i class="fas fa-times" @click="closeNav"></i>
+        </div>
+        <ul class="header__mobile-links">
+          <li class="header__mobile-link">Course</li>
+          <li class="header__mobile-link">Download</li>
+          <li class="header__mobile-link">Pricing</li>
+        </ul>
+        <a href="#" class="header__navbar-btn">LOGIN</a>
+      </div>
+      <i class="fas fa-bars header__navbar-icon" @click="openNav"></i>
+      <div class="header__navbar-right">
+        <a href="#" class="header__navbar-btn ">LOGIN</a>
+      </div>
+    </nav>
+    <div class="header__content">
+      <div class="header__info">
+        <h1 class="header__heading-big">Design System Course</h1>
+        <p class="header__heading-paragraph">
+          Build a design system from scratch and learn all about workflow
+        </p>
+        <div class="header__btn-con">
+          <a href="#" class="header__btn-big red">LOOK INSIDE</a>
+          <a href="#" class="header__btn-big green">ENROLL NOW</a>
+        </div>
+        <p class="header__special">Special price 15% off!</p>
+      </div>
+      <img class="header__image" src="../assets/images/hero.svg" alt="hero" />
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  }
+  data() {
+    return {
+      navStyle: false,
+    };
+  },
+  methods: {
+    openNav() {
+      this.navStyle = true;
+    },
+    closeNav() {
+      this.navStyle = false;
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+<style lang="scss">
+.green {
+  color: #fff;
+  background-color: #07b51c;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.red {
+  background-color: #eb346b;
+  color: #fff;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.header {
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 4em;
+
+    &-left {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    &-logo {
+      font-size: 1.6em;
+      font-weight: 900;
+      font-family: serif;
+      font-size: 2em;
+    }
+    &-icon {
+      display: none;
+    }
+    &-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    &-link {
+      padding-left: 2em;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    &-btn {
+      border-radius: 0.2em;
+      font-size: 0.8em;
+      padding: 1em 2em;
+      margin: 0.8rem;
+      cursor: pointer;
+      color: #fff;
+      background-color: #07b51c;
+    }
+    &__mobile {
+      display: none !important;
+    }
+  }
+  &__content {
+    max-width: 1200px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  &__heading-big {
+    font-size: 2.5em;
+    padding: 0.2em;
+  }
+  &__heading-paragraph {
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding: 0.2em;
+    margin-bottom: 2.5em;
+  }
+  &__btn-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn-big {
+    border-radius: 0.4em;
+    font-size: 0.9em;
+    padding: 1.5em 4.5em;
+    margin: 1em;
+    cursor: pointer;
+  }
+  &__special {
+    margin: 2em 0 4em 17em;
+  }
+  &__image {
+    width: 70%;
+    object-fit: cover;
+  }
 }
-a {
-  color: #42b983;
+@media (max-width: 860px) {
+  .header {
+    &__mobile {
+      position: fixed;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #fafafa;
+    }
+    &__navbar-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__mobile-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__btn-con {
+      flex-direction: column;
+    }
+    &__heading-big {
+      font-size: 2em;
+    }
+    &__heading-paragraph {
+      font-size: 0.9em;
+      margin-bottom: 2.5em;
+    }
+    &__btn-big {
+      font-size: 0.7em;
+      padding: 1em 3.5em;
+    }
+    &__special {
+      margin: 1em;
+    }
+    &__image {
+      margin-top: 1.5em;
+      width: 100%;
+    }
+    &__mobile-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2em;
+    }
+    &__navbar-links {
+      display: none;
+    }
+    &__navbar-right {
+      display: none;
+    }
+    &__navbar-icon {
+      display: block;
+    }
+    &__mobile-link {
+      text-align: center;
+      padding: 2em;
+    }
+  }
 }
+/* @media (min-width: 320px) and (max-width: 425px) {
+  .header {
+    &__navbar-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+} */
 </style>
