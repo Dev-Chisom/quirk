@@ -176,7 +176,7 @@ export default {
       margin: 0;
     }
     &__info {
-      padding: 1em;
+      margin: 1.5em;
     }
     &__navbar-left {
       display: flex;
