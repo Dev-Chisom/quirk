@@ -172,10 +172,8 @@ export default {
     &__navbar {
       padding: 1em;
     }
+
     &__content {
-      margin: 0;
-    }
-    &__info {
       margin: 1.5em;
     }
     &__navbar-left {
