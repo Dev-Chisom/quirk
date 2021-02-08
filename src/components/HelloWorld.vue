@@ -71,8 +71,11 @@ export default {
   background-color: #eb346b;
   color: #fff;
 }
+.fas {
+  font-size: 1.5em;
+}
 .animate {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
   transform-origin: right bottom;
   animation-name: rotate;
